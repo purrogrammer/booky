@@ -9,7 +9,7 @@ function BookForm() {
     description: ''
   });
 
-  const handleChange = (e) => {s
+  const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   };
 
@@ -30,26 +30,30 @@ function BookForm() {
       <input
         type="text"
         required
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        name="title"
+        value={formData.title}
+        onChange={handleChange}
         placeholder="Title"
       />
       <input
         type="text"
         required
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
+        name="author"
+        value={formData.author}
+        onChange={handleChange}
         placeholder="Author"
       />
       <input
         type="text"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        name="category"
+        value={formData.category}
+        onChange={handleChange}
         placeholder="Category (Optional)"
       />
       <textarea
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        name="description"
+        value={formData.description}
+        onChange={handleChange}
         placeholder="Description (Optional)"
       />
       <button type="submit">Add Book</button>
@@ -58,8 +62,3 @@ function BookForm() {
 }
 
 export default BookForm;
-
-import React, { useState } from 'react';
-
-
-
