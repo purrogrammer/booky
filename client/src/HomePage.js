@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function BooksList() {
+function HomePage() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -36,4 +36,4 @@ function BooksList() {
   );
 }
 
-export default BooksList;
+export default HomePage;
