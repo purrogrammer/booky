@@ -8,10 +8,11 @@ function CustomNavbar() {
             <Nav>
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="/about">About</Nav.Link>
-                <Nav.Link as={Link} to="/login">
+                <Nav.Link as={Link} to="/login"></Nav.Link>
+                <Nav.Link as={Link} to="/book-list">Club booklist</Nav.Link>
+                <Nav.Link as={Link} to="/add-book">Add a book</Nav.Link>
                     <Button>Login</Button>
-                </Nav.Link>
-            </Nav>
+                </Nav>
         </Navbar>
     );
 }

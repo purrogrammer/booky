@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './css/BooksList.css'; 
+import './css/global.css'; 
 
 function BooksList() {
   const [books, setBooks] = useState([]);
@@ -29,7 +31,7 @@ function BooksList() {
   };
 
   return (
-    <div>
+    <div className='container'>
       {books && books.map(book => {
         // Convert the dateAdded string to a Date object
         let dateAdded = new Date(book.dateAdded);
@@ -37,19 +39,19 @@ function BooksList() {
         let formattedDate = dateAdded.toLocaleDateString();
 
         return (
-          <div key={book._id}>
+          <div key={book._id} className='book-row row'>
             <h2>{book.title}</h2>
             <p>Author: {book.author}</p>
             <p>Category: {book.category}</p>
             <p>Description: {book.description}</p>
-            <p>Date Added: {formattedDate}</p> {/* Use the formatted date here */}
+            <p>Date Added: {formattedDate}</p> 
             <p>Submitted by: {book.submittedBy} </p> 
-
-            <button onClick={() => handleEdit(book._id)}>Edit</button>
-            <button onClick={() => handleDelete(book._id)}>Delete</button>
-
+          <div className='buttonRow'>
+              <button className='btn btn-sm btn-primary bookButton pr-2' id='editButton' onClick={() => handleEdit(book._id)}>Edit</button>
+              <button className='btn btn-sm btn-warning bookButton pr-2' id='deleteButton' onClick={() => handleDelete(book._id)}>Delete</button>
+            </div>
           </div>
-        );
+        );                 
       })}
     </div>
   );
